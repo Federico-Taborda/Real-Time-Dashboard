@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./Css/style.css")
+        link(rel="stylesheet", href="'https://fonts.googleapis.com/css?family=Cutive+Mono|Dosis&display=swap'")
+        script(src="https://kit.fontawesome.com/0055b0f94c.js" crossorigin="anonymous")
+        title Real Time Dashboard
+    body
+
+        h1(id="title") Real-Time Dashboard
+
+        h2(id="user-name") 
+            i(class="fas fa-user")  #{ system.username } - #{ system.machineName }
+
+        p(id="os")
+            i(class="fa fa-laptop")  #{ system.os } - Version #{ system.version } - #{ system.architecture }
+
+        p(id="processor") 
+            i(class="fas fa-microchip")  #{ system.processor }
+
+        p(id="dashboard") 
+            i(class="fas fa-memory")  Memory Usage
+        div
+            canvas(id="myChart" width="400" height="400")
+
+    script(defer src="./Js/Chart.js")
+    script(defer src="./Js/myPieChart.js")
+    script(defer src="http://localhost:3001/socket.io/socket.io.js")
+    script(defer src="./Js/script.js")
+    
